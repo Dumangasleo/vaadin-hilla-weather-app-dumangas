@@ -1,6 +1,5 @@
 //import Map, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import '../styles/tailwind.css';
 import '../styles/dashboard.css';
 import React, { useRef, useEffect, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
