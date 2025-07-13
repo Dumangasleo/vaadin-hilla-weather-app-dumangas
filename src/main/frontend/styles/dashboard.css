@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1e1f26; /* Dark background */
+  color: #e5e7eb;
+  padding: 24px; /* Overall body padding */
+}
+
+/* DASHBOARD LAYOUT */
+.dashboard {
+  display: grid;
+  grid-template-columns: 80px 1fr 320px;
+  height: calc(100vh - 48px); /* Full height minus body padding */
+  gap: 24px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background-color: #252836;
+  border-radius: 20px;
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Sidebar icon */
+.sidebar img {
+  width: 56px;
+  height: 56px;
+  opacity: 0.95;
+  margin-bottom: auto;
+}
+
+/* MAIN AREA (TOPBAR + MAP) */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/* TOPBAR */
+.topbar {
+  background-color: #252836;
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-size: 15px;
+  color: #facc15;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+.coordinates-content {
+  color: #e5e7eb;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* MAP CONTAINER */
+.map-container {
+  flex: 1;
+  background-color: #2e3244; /* Placeholder */
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* WEATHER PANEL */
+.weather-panel {
+  background-color: #252836;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Headings in panel */
+.weather-panel h2 {
+  font-size: 20px;
+  color: #facc15;
+  margin: 0;
+}
+
+/* Paragraph text */
+.weather-panel p {
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Weather info rows */
+.weather-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  color: #e5e7eb;
+}
+
+/* Label styling */
+.label {
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+/* RESPONSIVE: Ensure scroll support if needed */
+body, html {
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "sidebar topbar"
+      "sidebar map";
+  }
+
+  .weather-panel {
+    display: none; /* Hide side panel on small screens */
+  }
+}
