@@ -13,6 +13,7 @@
     <properties>
         <java.version>21</java.version>
         <vaadin.version>24.8.3</vaadin.version>
+         <hilla.version>24.7.10</hilla.version> 
     </properties>
 
     <parent>
@@ -29,6 +30,10 @@
                 <version>${vaadin.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>dev.hilla</groupId>
+                <artifactId>hilla</artifactId>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -47,7 +52,43 @@
             <artifactId>line-awesome</artifactId>
             <version>2.1.0</version>
         </dependency>
+        <!-- JUnit BOM to align versions -->
+  <dependency>
+    <groupId>org.junit</groupId>
+    <artifactId>junit-bom</artifactId>
+    <version>5.12.2</version>
+    <type>pom</type>
+    <scope>import</scope>
+  </dependency>
 
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.12.2</version>
+    <scope>test</scope>
+  </dependency>
+
+  <!-- Mockito (for mocking) -->
+  <dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>5.11.0</version>
+    <scope>test</scope>
+  </dependency>
+
+  <!-- Spring Boot Test -->
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+    <exclusions>
+      <!-- Avoid old JUnit engine conflicts -->
+      <exclusion>
+        <groupId>org.junit.vintage</groupId>
+        <artifactId>junit-vintage-engine</artifactId>
+      </exclusion>
+    </exclusions>
+  </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -72,7 +113,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
@@ -112,7 +152,7 @@
             </plugin>
         </plugins>
     </build>
-
+    
     <profiles>
         <profile>
             <!-- Production mode is activated using -Pproduction -->
