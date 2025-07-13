@@ -44,7 +44,7 @@ public class WeatherEndpoint {
 
         } catch (IllegalArgumentException ex) {
             logger.error("Invalid input: {}", ex.getMessage());
-            throw ex; // Let Vaadin Hilla handle and send to frontend as a user error
+            throw ex; 
 
         } catch (RuntimeException ex) {
             logger.error("Weather service failed: {}", ex.getMessage(), ex);

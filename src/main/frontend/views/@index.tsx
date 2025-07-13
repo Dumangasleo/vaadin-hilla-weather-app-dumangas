@@ -38,7 +38,7 @@ const WeatherDashboard : React.FC = () => {
       if (mapRef.current) {
         markerRef.current = new mapboxgl.Marker({ color: 'red' })
         .setLngLat([lng, lat])
-        .addTo(mapRef.current); // now it's guaranteed to be non-null
+        .addTo(mapRef.current); 
     }
 
         // Fetch weather data based on clicked coordinates
@@ -54,9 +54,6 @@ const WeatherDashboard : React.FC = () => {
             if (response) {
                 console.log(response);
             }
-            
-    /*       const response = await axios.get(`${WEATHER_API}?lat=${lat}&lon=${lng}`);
-          setWeather(response.data); */
 
         } catch (error) {
           console.error("Error fetching weather data:", error);

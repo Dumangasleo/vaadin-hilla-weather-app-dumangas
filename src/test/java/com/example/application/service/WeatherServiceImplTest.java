@@ -1,7 +1,6 @@
 package com.example.application.service;
 
 import com.example.application.weather.dto.WeatherRequest;
-import com.example.application.weather.dto.WeatherResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.util.ReflectionTestUtils;
 import static org.junit.jupiter.api.Assertions.*;
