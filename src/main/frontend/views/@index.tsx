@@ -21,7 +21,7 @@ const WeatherDashboard : React.FC = () => {
     mapboxgl.accessToken = MAPBOX_TOKEN;
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/navigation-night-v1',
       center: [125.8072, 7.4478],
       zoom: 10.12
     });
